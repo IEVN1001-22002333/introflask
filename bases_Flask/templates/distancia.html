@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block container%}
+
+formulario
+<form action="/distancia" method="post">
+
+    <div class="mb-3">
+        <label for="Xcord1" class="form-label">Xcord 1:</label>
+        <input type="number" class="form-control" id="Xcord1" name="Xcord1">
+    </div>
+
+    <div class="mb-3">
+        <label for="Xcord2" class="form-label">Xcord 2:</label>
+        <input type="number" class="form-control" id="Xcord2" name="Xcord2">
+    </div>
+
+    <div class="mb-3">
+        <label for="Ycord1" class="form-label">Ycord 1:</label>
+        <input type="number" class="form-control" id="Ycord1" name="Ycord1">
+    </div>
+
+    <div class="mb-3">
+        <label for="Ycord2" class="form-label">Ycord 2:</label>
+        <input type="number" class="form-control" id="Ycord2" name="Ycord2">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Calcular</button>
+</form>
+
+{% if request.method == 'POST' %}
+<h1>
+    La distancia es = {{ "%.2f"|format(distancia) }}
+</h1>
+{% endif %}
+
+{%endblock%}
